@@ -14,7 +14,7 @@ public class TextLogEntryWithIcon extends TextLogEntry {
 
     @Override
     public int getRequiredHeight() {
-        return 64;
+        return 16;
     }
 
     @Override
