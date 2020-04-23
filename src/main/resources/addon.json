@@ -1,0 +1,7 @@
+{
+  "uuid": "%uuid%",
+  "name": "FancyPvP",
+  "mainClass": "com.github.derrop.labymod.addons.fancypvp.PvPAddon",
+  "author": "derrop",
+  "description": "This addon can show the death messages in the chat in the top right corner"
+}
