@@ -19,16 +19,17 @@ public class ChatListener implements MessageReceiveEvent {
 
     @Override
     public boolean onReceive(String rawMessage, String message) {
+        if (!this.addon.isEnabled()) {
+            return false;
+        }
+
         for (ChatPattern pattern : this.addon.getCurrentPatterns()) {
             for (String regex : pattern.getRegex()) {
                 Matcher matcher = Pattern.compile(regex).matcher(message);
                 if (matcher.matches()) {
                     for (ChatParser parser : this.addon.getChatParsers()) {
                         if (parser.getName().equals(pattern.getName())) {
-                            System.out.println(parser.getName());
-                            System.out.println(matcher.group(1) + " " + matcher.group(2));
                             LogEntry entry = parser.parseChatMessage(pattern, matcher, rawMessage, message);
-                            System.out.println(String.valueOf(entry));
                             if (entry != null) {
                                 this.addon.getActiveLogEntries().add(entry);
                                 return true;
