@@ -26,7 +26,7 @@ public class LogRenderListener {
         int offY = 2;
         for (LogEntry entry : this.addon.getActiveLogEntries()) {
             entry.draw(utils, utils.getWidth(), offY);
-            offY += utils.fontRenderer.FONT_HEIGHT + 2;
+            offY += entry.getRequiredHeight(utils) + 3;
         }
     }
 

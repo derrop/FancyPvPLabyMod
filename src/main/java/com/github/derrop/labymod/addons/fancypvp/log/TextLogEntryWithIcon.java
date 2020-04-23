@@ -13,8 +13,8 @@ public class TextLogEntryWithIcon extends TextLogEntry {
     }
 
     @Override
-    public int getRequiredHeight() {
-        return 16;
+    public int getRequiredHeight(DrawUtils utils) {
+        return Math.max(16, super.getRequiredHeight(utils));
     }
 
     @Override

@@ -10,8 +10,8 @@ public abstract class LogEntry {
         return this.creationTime;
     }
 
-    public int getRequiredHeight() {
-        return 10;
+    public int getRequiredHeight(DrawUtils utils) {
+        return utils.fontRenderer.FONT_HEIGHT;
     }
 
     public abstract void draw(DrawUtils utils, int x, int y);
