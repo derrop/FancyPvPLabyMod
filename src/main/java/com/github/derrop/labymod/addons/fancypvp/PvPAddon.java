@@ -4,7 +4,6 @@ import com.github.derrop.labymod.addons.fancypvp.listener.ChatListener;
 import com.github.derrop.labymod.addons.fancypvp.listener.LogRenderListener;
 import com.github.derrop.labymod.addons.fancypvp.log.LogEntry;
 import com.github.derrop.labymod.addons.fancypvp.parse.ChatParser;
-import com.github.derrop.labymod.addons.fancypvp.parse.SimpleChatParser;
 import com.github.derrop.labymod.addons.fancypvp.parse.SimpleChatParserWithIcon;
 import com.github.derrop.labymod.addons.fancypvp.parse.chat.ChatPattern;
 import com.google.gson.Gson;
@@ -33,7 +32,7 @@ public class PvPAddon extends LabyModAddon {
     private ChatPattern[] patterns = new ChatPattern[0];
 
     private ChatParser[] chatParsers = new ChatParser[]{
-            new SimpleChatParserWithIcon("kill", matcher -> this.getPrefix(matcher.group(1)) + matcher.group(1) + " §7> " + this.getPrefix(matcher.group(2)) + matcher.group(2), Material.IRON_SWORD),
+            new SimpleChatParserWithIcon("kill", matcher -> this.getPrefix(matcher.group(1)) + matcher.group(1) + " §7by " + this.getPrefix(matcher.group(2)) + matcher.group(2), Material.IRON_SWORD),
             new SimpleChatParserWithIcon("death", matcher -> this.getPrefix(matcher.group(1)) + matcher.group(1), Material.RED_ROSE)
     };
 
