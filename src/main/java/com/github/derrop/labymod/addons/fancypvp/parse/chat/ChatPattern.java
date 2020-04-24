@@ -8,7 +8,9 @@ public class ChatPattern {
 
     static {
         DEFAULTS = new ChatPattern[]{
-                new ChatPattern("kill", new String[]{"*.claymc.net", "claymc.net"}, ".. Clayline . Der Spieler (.*) wurde von (.*) get.tet\\\\.")
+                new ChatPattern("kill", new String[]{"*.claymc.net", "claymc.net"}, ".. Clayline . Der Spieler (.*) wurde von (.*) get.tet\\."),
+                new ChatPattern("kill", new String[]{"*.gommehd.net", "gommehd.net", "*.gommehd.com", "gommehd.com"}, "\\[Cores] (.*) wurde von (.*) get.tet"),
+                new ChatPattern("death", new String[]{"*.gommehd.net", "gommehd.net", "*.gommehd.com", "gommehd.com"}, "\\[Cores] (.*) ist gestorben")
         };
     }
 
